@@ -1,5 +1,14 @@
-<% @store.each do |hour| %>
+
+<%= @store.address %></br>
+<% @store.city %>, <%= @store.state %> <%= @store.zip %></br>
+
+Is open
 <ul>
-  <%= hour %>
+  <%= @store.mon %>
+  <%= @store.tues %>
+  <%= @store.wed %>
+  <%= @store.thurs %>
+  <%= @store.fri %>
+  <%= @store.sat %>
+  <%= @store.sun %>
 </ul>
-<% end %>
