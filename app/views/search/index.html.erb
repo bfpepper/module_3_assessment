@@ -1,7 +1,7 @@
 There are <%= ((@stores.count) +1) %> stores in your search
 
 <% @stores.each do |store| %>
-<%= link_to store.name, store_path(store) %></br>
+<%= link_to store.name, store_path(store.id) %></br>
 <%= store.city %></br>
 <%= store.distance %></br>
 <%= store.phone %></br>
