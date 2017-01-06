@@ -10,7 +10,7 @@ class StoreService
   end
 
   def get_store(id)
-    store = @connection.get "stores(storeId=#{id})?format=json&show=hoursAmPm&apiKey=#{ENV['api_key']}"
+    store = @connection.get "stores(storeId=1224)?format=json&show=hoursAmPm,longName,city,postalCode,region,address,storeType&apiKey=#{ENV['api_key']}"
     JSON.parse(store.body, symbolize_names: true)
   end
 

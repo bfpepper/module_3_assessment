@@ -19,6 +19,7 @@ class Store
 
   def self.find(id)
     store = StoreService.new.get_store(id)
+    binding.pry
     store[:stores].first.values.first.split("; ")
   end
 
