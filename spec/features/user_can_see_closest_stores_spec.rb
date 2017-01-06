@@ -9,7 +9,7 @@ describe "User visits root path" do
       fill_in :q, with: "80202"
       click_on "Search"
 
-      expect(current_path).to eq(stores_path)
+      expect(current_path).to eq(search_path)
     end
   end
 end
