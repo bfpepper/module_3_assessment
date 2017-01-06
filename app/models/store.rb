@@ -3,7 +3,6 @@ class Store
 
 
   def initialize(store)
-    binding.pry
     @id = store[:storeId]
     @name = store[:longName]
     @city = store[:city]
