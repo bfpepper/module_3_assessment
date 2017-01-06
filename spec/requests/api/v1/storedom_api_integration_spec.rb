@@ -64,10 +64,8 @@ describe "Storedom API integration" do
 
       expect(response).to have_http_status(201)
       expect(post_result["name"]).to eq("Thing")
-      expect(post_result["description"]).to eq("That thing")
-      expect(post_result["image_url"]).to eq("Thing")
-# I receive a 201 JSON  response if the record is successfully created
-# And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
+      expect(post_result["description"]).to eq("that thing")
+      expect(post_result["image_url"]).to eq("https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.ladiesgadgets.com%2Fwp-content%2Fuploads%2F2011%2F09%2FCool-Toy-Car-Powers-From-Salt-Water-1.jpg&f=1")
     end
   end
 end

@@ -1,18 +1,18 @@
-# require "rails_helper"
-#
-# describe "User visits root path" do
-#   context "enters a zip code into the search bar" do
-#     it "it returns a list a stroes" do
-#
-#       visit root_path
-#
-#       fill_in :g, with: "80202"
-#       click_on "Search"
-#
-#       expect(current_path).to eq(stores_path)
-#     end
-#   end
-# end
+require "rails_helper"
+
+describe "User visits root path" do
+  context "enters a zip code into the search bar" do
+    it "it returns a list a stroes" do
+
+      visit root_path
+
+      fill_in :q, with: "80202"
+      click_on "Search"
+
+      expect(current_path).to eq(stores_path)
+    end
+  end
+end
 
 # As a user
 # When I visit "/"
