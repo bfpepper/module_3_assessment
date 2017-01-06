@@ -18,4 +18,9 @@ class Store
     end
   end
 
+  def self.find(id)
+    store = StoreService.new.get_store(id)
+    binding.pry
+  end
+
 end

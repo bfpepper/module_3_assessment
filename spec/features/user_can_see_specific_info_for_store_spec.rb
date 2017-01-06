@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "User sees specific stroe info" do
   it "shows more detailed info the a given store" do
-    VCR.use_cassette("stores") do
+    VCR.use_cassette("store") do
 
       visit root_path
 
@@ -10,6 +10,10 @@ describe "User sees specific stroe info" do
       click_on "Search"
 
       click_on "Best Buy - Belmar"
+
+      expect(page).to have_content("Best Buy - Belmar")
+      expect(page).to have_content("BigBox")
+      expect(page).to have_content("BigBox")
     end
   end
 end

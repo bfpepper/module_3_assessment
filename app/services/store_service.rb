@@ -9,4 +9,9 @@ class StoreService
     JSON.parse(stores.body, symbolize_names: true)
   end
 
+  def get_store(id)
+    store = @connection.get "stores(storeId=#{id})?format=json&show=hoursAmPm&apiKey=#{ENV['api_key']}"
+    JSON.parse(store.body, symbolize_names: true)
+  end
+
 end
