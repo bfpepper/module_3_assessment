@@ -3,13 +3,15 @@ require "rails_helper"
 describe "User visits root path" do
   context "enters a zip code into the search bar" do
     it "it returns a list a stroes" do
+      VCR.use_cassette("stores") do
 
-      visit root_path
+        visit root_path
 
-      fill_in :q, with: "80202"
-      click_on "Search"
+        fill_in :q, with: "80202"
+        click_on "Search"
 
-      expect(current_path).to eq(search_path)
+        expect(current_path).to eq(search_path)
+      end
     end
   end
 end

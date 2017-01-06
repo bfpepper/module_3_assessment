@@ -1,13 +1,12 @@
 class StoreService
 
   def initialize
-    @connection = Faraday.new("https://api.bestbuy.com/v1/stores")
+    @connection = Faraday.new("https://api.bestbuy.com/v1")
   end
-  # https://api.bestbuy.com/v1/stores
 
   def get_stores(zipcode)
-    stores = @connection.get "(area(#{zipcode},25))?format=json&show=storeType,city,distance,phone,longName&apiKey=#{ENV['api_key']}"
-    binding.pry
+    stores = @connection.get "stores(area(#{zipcode},25))?format=json&show=storeType,city,distance,phone,longName&apiKey=#{ENV['api_key']}"
+    JSON.parse(stores.body, symbolize_names: true)
   end
 
 end
