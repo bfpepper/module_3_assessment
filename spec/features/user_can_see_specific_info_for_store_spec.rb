@@ -11,9 +11,16 @@ describe "User sees specific stroe info" do
 
       click_on "Best Buy - Belmar"
 
-      expect(page).to have_content("Best Buy - Belmar")
-      expect(page).to have_content("BigBox")
-      expect(page).to have_content("BigBox")
+      expect(page).to have_content("Mon: 10am-9pm")
+      expect(page).to have_content("Tue: 10am-9pm")
+      expect(page).to have_content("Wed: 10am-9pm")
+      expect(page).to have_content("Thurs: 10am-9pm")
+      expect(page).to have_content("Fri: 10am-9pm")
+      expect(page).to have_content("Sat: 10am-9pm")
+      expect(page).to have_content("Sun: 10am-7pm")
+      # expect(page).to have_content("Best Buy - Belmar")
+      # expect(page).to have_content("BigBox")
+      # expect(page).to have_content("BigBox")
     end
   end
 end
